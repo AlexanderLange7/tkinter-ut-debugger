@@ -2,6 +2,7 @@
 import tkinter_helper_methods as thm
 #Import tkinter
 import tkinter as tk
+import os
 
 #Create the debug window
 window = tk.Tk()
@@ -34,7 +35,13 @@ button = tk.Button(
     height=2)
 button.pack()
 
+#Create a frame with the console inside
+termf = tk.Frame(window, height=400, width=500)
+termf.pack(fill="both", expand="yes")
+wid = termf.winfo_id()
 
+print("Hello World!")
 #mainloop tells python to run Tkinter event loop, checking for code
 window.mainloop()
+
 
