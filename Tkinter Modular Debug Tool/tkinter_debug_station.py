@@ -35,12 +35,20 @@ button = tk.Button(
     height=2)
 button.pack()
 
-#Create a frame with the console inside
-termf = tk.Frame(window, height=400, width=500)
-termf.pack(fill="both", expand="yes")
-wid = termf.winfo_id()
+#Create a frame inside to simulate a console
+Scroller = tk.Scrollbar(window)
+T = tk.Text(window, height=4, width=50)
+Scroller.pack(side=tk.RIGHT, fill=tk.Y)
+T.pack(side=tk.LEFT, fill=tk.Y)
+Scroller.config(command=T.yview)
 
+quote="""Test"""
+T.insert(tk.END, quote)
 print("Hello World!")
+
+
+
+
 #mainloop tells python to run Tkinter event loop, checking for code
 window.mainloop()
 
