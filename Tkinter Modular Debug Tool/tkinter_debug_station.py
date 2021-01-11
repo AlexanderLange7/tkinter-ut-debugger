@@ -36,16 +36,10 @@ button = tk.Button(
 button.pack()
 
 #Create a frame inside to simulate a console
-Scroller = tk.Scrollbar(window)
-T = tk.Text(window, height=4, width=50)
-Scroller.pack(side=tk.RIGHT, fill=tk.Y)
-T.pack(side=tk.LEFT, fill=tk.Y)
-Scroller.config(command=T.yview)
-
-quote="""Test"""
-T.insert(tk.END, quote)
-print("Hello World!")
-
+textf = tk.Text(window, height=100, width=500)
+textf.insert(tk.END, "Hello....." + '\n')
+textf.insert(tk.END, "Bye Bye....." + '\n')
+textf.pack(fill="both", expand="YES")
 
 
 
